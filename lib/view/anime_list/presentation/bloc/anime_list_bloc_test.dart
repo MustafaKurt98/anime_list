@@ -1,12 +1,12 @@
-// import 'package:bloc_state/core/error/failures.dart';
-// import 'package:bloc_state/view/anime_list/domain/entities/anime.dart';
-// import 'package:bloc_state/view/anime_list/domain/usecases/get_top_anime.dart';
-// import 'package:bloc_state/view/anime_list/presentation/bloc/anime_list_bloc.dart';
+// import 'package:anime_list/core/error/failures.dart';
 // import 'package:dartz/dartz.dart';
 // import 'package:flutter_test/flutter_test.dart';
 // import 'package:mockito/annotations.dart';
 // import 'package:mockito/mockito.dart';
 
+// import '../../domain/entities/anime.dart';
+// import '../../domain/usecases/get_top_anime.dart';
+// import 'anime_list_bloc.dart';
 // import 'anime_list_bloc_test.mocks.dart';
 
 // @GenerateMocks([GetTopAnime])

@@ -10,11 +10,13 @@ class AnimeModel extends Anime {
     required String title,
     required String imageUrl,
     required double score,
+    required String type,
   }) : super(
           id: id,
           title: title,
           imageUrl: imageUrl,
           score: score,
+          type: type,
         );
 
   factory AnimeModel.fromJson(Map<String, dynamic> json) => AnimeModel(
@@ -22,6 +24,7 @@ class AnimeModel extends Anime {
         title: json['title'] as String,
         imageUrl: json['images']['webp']['image_url'] as String,
         score: (json['score'] as num?)?.toDouble() ?? 0.0,
+        type: json['type'] as String,
       );
 
   Map<String, dynamic> toJson() => _$AnimeModelToJson(this);

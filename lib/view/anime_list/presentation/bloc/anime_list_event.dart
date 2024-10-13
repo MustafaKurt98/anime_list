@@ -15,3 +15,14 @@ class FetchAnimeList extends AnimeListEvent {
   @override
   List<Object> get props => [page];
 }
+
+class LoadMoreAnime extends AnimeListEvent {}
+
+class FilterAnimeList extends AnimeListEvent {
+  final String selectedType;
+
+  const FilterAnimeList({required this.selectedType});
+
+  @override
+  List<Object> get props => [selectedType];
+}

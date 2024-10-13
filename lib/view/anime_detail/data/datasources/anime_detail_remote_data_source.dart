@@ -17,12 +17,20 @@ class AnimeDetailRemoteDataSourceImpl implements AnimeDetailRemoteDataSource {
 
   @override
   Future<AnimeDetailModel> getAnimeDetail(int id) async {
-    final response = await apiService.getAnimeDetail(id);
-    if (response.isSuccessful) {
-      final Map<String, dynamic> jsonMap = json.decode(response.body);
-      return AnimeDetailModel.fromJson(jsonMap['data']);
-    } else {
-      throw ServerException();
+    try {
+      final response = await apiService.getAnimeDetail(id);
+      if (response.isSuccessful) {
+        final Map<String, dynamic> jsonMap = json.decode(response.body);
+        return AnimeDetailModel.fromJson(jsonMap['data']);
+      } else {
+        throw ServerException();
+      }
+    } catch (e) {
+      if (e is FormatException) {
+        throw const FormatException('Invalid JSON format');
+      } else {
+        throw ServerException();
+      }
     }
   }
 }

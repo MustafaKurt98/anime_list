@@ -6,12 +6,6 @@ part of 'anime_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-AnimeModel _$AnimeModelFromJson(Map<String, dynamic> json) => AnimeModel(
-      id: json['id'] as int,
-      title: json['title'] as String,
-      imageUrl: json['imageUrl'] as String,
-      score: (json['score'] as num).toDouble(),
-    );
 
 Map<String, dynamic> _$AnimeModelToJson(AnimeModel instance) =>
     <String, dynamic>{
@@ -19,4 +13,5 @@ Map<String, dynamic> _$AnimeModelToJson(AnimeModel instance) =>
       'title': instance.title,
       'imageUrl': instance.imageUrl,
       'score': instance.score,
+      'type': instance.type,
     };
