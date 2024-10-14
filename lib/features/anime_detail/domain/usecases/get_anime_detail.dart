@@ -11,7 +11,7 @@ class GetAnimeDetail {
 
   GetAnimeDetail(this.repository);
 
-  Future<Either<Failure, AnimeDetail>> call(Params params) async {
+  Future<Either<Failure, List<AnimeDetail>>> call(Params params) async {
     return await repository.getAnimeDetail(params.id);
   }
 }

@@ -15,7 +15,7 @@ class AnimeListItem extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => AnimeDetailPage(animeId: anime.id),
+            builder: (context) => AnimeDetailPage(anime: anime),
           ),
         );
       },
@@ -36,11 +36,11 @@ class AnimeListItem extends StatelessWidget {
                   color: Colors.red,
                 ),
               ),
-              boxShadow: const [
+              boxShadow: [
                 BoxShadow(
-                  color: Colors.grey,
+                  color: Colors.grey.shade800,
                   blurRadius: 3,
-                  offset: Offset(0, 4),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),

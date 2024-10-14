@@ -10,7 +10,8 @@ class AnimeListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<AnimeListBloc>()..add(const FetchAnimeList(page: 1)),
+      create: (context) =>
+          getIt<AnimeListBloc>()..add(const FetchAnimeList(page: 1)),
       child: const AnimeListView(),
     );
   }
@@ -64,19 +65,19 @@ class AnimeListViewState extends State<AnimeListView> {
           BlocBuilder<AnimeListBloc, AnimeListState>(
             builder: (context, state) {
               if (state is AnimeListLoaded) {
-                final types = state.animeList
-                    .map((anime) => anime.type)
-                    .toSet()
-                    .toList();
+                final types =
+                    state.animeList.map((anime) => anime.type).toSet().toList();
                 types.insert(0, 'All Anime');
                 return DropdownButton<String>(
                   value: state.selectedType,
-                  hint: const Text('All Anime',
-                      style: TextStyle(color: Colors.white)),
+                  hint: const Text(
+                    'All Anime',
+                  ),
                   items: types.map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value, style: const TextStyle(color: Colors.black)),
+                      child: Text(value,
+                          style: const TextStyle(color: Colors.grey)),
                     );
                   }).toList(),
                   onChanged: (String? newValue) {
@@ -109,8 +110,8 @@ class AnimeListViewState extends State<AnimeListView> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.7,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10),
+                  crossAxisSpacing: 15,
+                  mainAxisSpacing: 15),
               itemCount: state.hasReachedMax
                   ? state.animeList.length
                   : state.animeList.length + 1,

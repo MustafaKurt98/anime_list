@@ -12,7 +12,7 @@ class AnimeDetailInitial extends AnimeDetailState {}
 class AnimeDetailLoading extends AnimeDetailState {}
 
 class AnimeDetailLoaded extends AnimeDetailState {
-  final AnimeDetail animeDetail;
+  final List<AnimeDetail> animeDetail;
 
   const AnimeDetailLoaded({required this.animeDetail});
 

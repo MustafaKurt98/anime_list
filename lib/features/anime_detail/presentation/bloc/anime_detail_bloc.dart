@@ -1,6 +1,6 @@
 import 'package:anime_list/features/anime_detail/domain/entities/anime_detail.dart';
 import 'package:anime_list/features/anime_detail/domain/usecases/get_anime_detail.dart';
-import 'package:anime_list/features/anime_detail/presentation/bloc/anime_detail.event.dart';
+import 'package:anime_list/features/anime_detail/presentation/bloc/anime_detail_event.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';

@@ -14,11 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.blueGrey,
-            elevation: 4,
-            iconTheme: IconThemeData(color: Colors.black)),
-      ),
+          appBarTheme: const AppBarTheme(
+              backgroundColor: Colors.black,
+              elevation: 4,
+              iconTheme: IconThemeData(color: Colors.white)),
+          scaffoldBackgroundColor: Colors.black),
       debugShowCheckedModeBanner: false,
       home: const AnimeListPage(),
     );

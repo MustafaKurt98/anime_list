@@ -13,7 +13,7 @@ class AnimeDetailRepositoryImpl implements AnimeDetailRepository {
   AnimeDetailRepositoryImpl(this.remoteDataSource);
 
   @override
-  Future<Either<Failure, AnimeDetail>> getAnimeDetail(int id) async {
+  Future<Either<Failure, List<AnimeDetail>>> getAnimeDetail(int id) async {
     try {
       final remoteAnimeDetail = await remoteDataSource.getAnimeDetail(id);
       return Right(remoteAnimeDetail);

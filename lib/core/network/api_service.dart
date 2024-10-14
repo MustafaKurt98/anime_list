@@ -9,7 +9,7 @@ abstract class ApiService extends ChopperService {
   @Get(path: '/top/anime')
   Future<Response> getTopAnime(@Query('page') int page);
 
-  @Get(path: '/anime/{id}')
+  @Get(path: '/anime/{id}/characters')
   Future<Response> getAnimeDetail(@Path('id') int id);
 
   @factoryMethod

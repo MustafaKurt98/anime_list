@@ -1,5 +1,6 @@
-import 'package:anime_list/features/anime_detail/domain/entities/anime_detail.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../../domain/entities/anime_detail.dart';
 
 part 'anime_detail_model.g.dart';
 
@@ -9,22 +10,18 @@ class AnimeDetailModel extends AnimeDetail {
     required int id,
     required String title,
     required String imageUrl,
-    required double score,
-    required List<String> genres,
-    required String synopsis,
-    required int episodesCount,
   }) : super(
           id: id,
           title: title,
           imageUrl: imageUrl,
-          score: score,
-          genres: genres,
-          synopsis: synopsis,
-          episodesCount: episodesCount,
         );
 
   factory AnimeDetailModel.fromJson(Map<String, dynamic> json) =>
-      _$AnimeDetailModelFromJson(json);
-
+      AnimeDetailModel(
+        id: json['character']['mal_id'] as int,
+        title: json['character']['name'] as String,
+        imageUrl: json['character']['images']['jpg']['image_url'] as String,
+      );
+  
   Map<String, dynamic> toJson() => _$AnimeDetailModelToJson(this);
 }
