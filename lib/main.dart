@@ -1,5 +1,5 @@
 import 'package:anime_list/core/injection/injection.dart';
-import 'package:anime_list/view/anime_list/presentation/pages/anime_list_page.dart';
+import 'package:anime_list/features/anime_list/presentation/pages/anime_list_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
