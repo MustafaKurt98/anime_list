@@ -25,19 +25,8 @@ class AnimeModel extends Anime {
           episodes: episodes,
         );
 
-  factory AnimeModel.fromJson(Map<String, dynamic> json) => AnimeModel(
-        id: json['mal_id'] as int,
-        title: json['title'] as String,
-        imageUrl: json['images']['webp']['image_url'] as String,
-        score: (json['score'] as num?)?.toDouble() ?? 0.0,
-        type: json['type'] as String,
-        synopsis: json['synopsis'] as String,
-        genres: (json['genres'] as List<dynamic>?)
-                ?.map((e) => e['name'] as String)
-                .toList() ??
-            [],
-        episodes: json['episodes'] as int?,
-      );
+  factory AnimeModel.fromJson(Map<String, dynamic> json) =>
+      _$AnimeModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$AnimeModelToJson(this);
 }

@@ -111,14 +111,14 @@ class AnimeDetailPage extends StatelessWidget {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(12),
                                   child: Image.network(
-                                    animeDetail[index].imageUrl,
+                                    animeDetail[index].imageUrl ?? '',
                                   ),
                                 ),
                               ),
                             ),
                             Expanded(
                               child: Text(
-                                animeDetail[index].title,
+                                animeDetail[index].title ?? '',
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(color: Colors.white),

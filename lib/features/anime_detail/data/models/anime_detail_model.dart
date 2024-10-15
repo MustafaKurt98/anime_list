@@ -17,11 +17,6 @@ class AnimeDetailModel extends AnimeDetail {
         );
 
   factory AnimeDetailModel.fromJson(Map<String, dynamic> json) =>
-      AnimeDetailModel(
-        id: json['character']['mal_id'] as int,
-        title: json['character']['name'] as String,
-        imageUrl: json['character']['images']['jpg']['image_url'] as String,
-      );
-  
+      _$AnimeDetailModelFromJson(json);
   Map<String, dynamic> toJson() => _$AnimeDetailModelToJson(this);
 }

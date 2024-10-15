@@ -8,9 +8,9 @@ part of 'anime_detail_model.dart';
 
 AnimeDetailModel _$AnimeDetailModelFromJson(Map<String, dynamic> json) =>
     AnimeDetailModel(
-      id: json['id'] as int,
-      title: json['title'] as String,
-      imageUrl: json['imageUrl'] as String,
+      id: json['character']['mal_id'] as int,
+      title: json['character']['name'] as String,
+      imageUrl: json['character']['images']['jpg']['image_url'] as String,
     );
 
 Map<String, dynamic> _$AnimeDetailModelToJson(AnimeDetailModel instance) =>
