@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "949521501148",
+    "project_id": "anime-list-fd08a",
+    "storage_bucket": "anime-list-fd08a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949521501148:android:3b045a14c46077bbc3dd19",
+        "android_client_info": {
+          "package_name": "com.mustafakurt.anime_list.anime_list"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO6mVAcdSw21Qb27Wfc9ArB35GTExzxDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

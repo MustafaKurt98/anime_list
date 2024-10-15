@@ -1,9 +1,16 @@
 import 'package:anime_list/core/injection/injection.dart';
 import 'package:anime_list/features/anime_list/presentation/pages/anime_list_page.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'firebase_options.dart';
+
+Future<void> main() async {
   configureDependencies();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
   runApp(const MyApp());
 }
 
