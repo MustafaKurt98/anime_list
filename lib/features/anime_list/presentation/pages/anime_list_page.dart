@@ -104,25 +104,27 @@ class AnimeListViewState extends State<AnimeListView> {
           if (state is AnimeListInitial) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is AnimeListLoaded) {
-            return GridView.builder(
-              controller: _scrollController,
-              padding: const EdgeInsets.all(10),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 0.7,
-                  crossAxisSpacing: 15,
-                  mainAxisSpacing: 15),
-              itemCount: state.hasReachedMax
-                  ? state.animeList.length
-                  : state.animeList.length + 1,
-              itemBuilder: (context, index) {
-                if (index >= state.animeList.length) {
-                  return _isLoadingMore
-                      ? const Center(child: CircularProgressIndicator())
-                      : Container();
-                }
-                return AnimeListItem(anime: state.animeList[index]);
-              },
+            return Scrollbar(
+              child: GridView.builder(
+                controller: _scrollController,
+                padding: const EdgeInsets.all(10),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 0.7,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 15),
+                itemCount: state.hasReachedMax
+                    ? state.animeList.length
+                    : state.animeList.length + 1,
+                itemBuilder: (context, index) {
+                  if (index >= state.animeList.length) {
+                    return _isLoadingMore
+                        ? const Center(child: CircularProgressIndicator())
+                        : Container();
+                  }
+                  return AnimeListItem(anime: state.animeList[index]);
+                },
+              ),
             );
           } else if (state is AnimeListError) {
             return Center(child: Text(state.message));

@@ -31,7 +31,8 @@ class _$ApiService extends ApiService {
 
   @override
   Future<Response<dynamic>> getAnimeDetail(int id) {
-    final Uri $url = Uri.parse('https://api.jikan.moe/v4/anime/${id}/characters');
+    final Uri $url =
+        Uri.parse('https://api.jikan.moe/v4/anime/${id}/characters');
     final Request $request = Request(
       'GET',
       $url,
